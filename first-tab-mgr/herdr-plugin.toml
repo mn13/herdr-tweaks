@@ -1,0 +1,18 @@
+id = "mn13.first-tab-mgr"
+name = "first-tab-mgr"
+version = "0.1.0"
+description = "Names the first tab of a new space mgr."
+platforms = ["macos", "linux"]
+min_herdr_version = "0.9.4"
+
+[[events]]
+on = "workspace.created"
+command = ["bash", "on-workspace-created.sh"]
+
+[[panes]]
+id = "name-tab"
+title = "First tab"
+placement = "popup"
+width = 40
+height = 3
+command = ["zsh", "name-tab.zsh"]

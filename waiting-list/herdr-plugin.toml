@@ -1,0 +1,17 @@
+id = "mn13.waiting-list"
+name = "waiting-list"
+version = "0.1.0"
+description = "A space at the top of the sidebar listing non-worker agents that are done or blocked."
+platforms = ["macos", "linux"]
+min_herdr_version = "0.9.4"
+
+[[startup]]
+command = ["bash", "waiting.sh", "ensure"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["bash", "waiting.sh", "update"]
+
+[[events]]
+on = "pane.closed"
+command = ["bash", "waiting.sh", "update"]

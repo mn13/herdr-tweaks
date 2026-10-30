@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "sh ~/.claude/hooks/herdr-fleet-role.sh start", "timeout": 5 }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "sh ~/.claude/hooks/herdr-fleet-role.sh prompt", "timeout": 5 }] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Bash", "hooks": [{ "type": "command", "command": "sh ~/.claude/hooks/herdr-fleet-role.sh bash", "timeout": 5 }] }
+    ]
+  }
+}
